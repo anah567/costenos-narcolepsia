@@ -27,10 +27,7 @@ type App struct {
 	camilo *hospital.Camillero
 }
 
-// ==============================
 // DTO
-// ==============================
-
 type PacienteDTO struct {
 	ID         string `json:"id"`
 	Nombre     string `json:"nombre"`
@@ -57,8 +54,15 @@ type PersonalDTO struct {
 }
 
 type EpisodioDTO struct {
-	ID      string `json:"id"`
-	Resumen string `json:"resumen"`
+	ID             string `json:"id"`
+	FechaHora      string `json:"fechaHora"`
+	PacienteID     string `json:"pacienteId"`
+	PacienteNombre string `json:"pacienteNombre"`
+	Ubicacion      string `json:"ubicacion"`
+	Habitacion     string `json:"habitacion"`
+	AtendidoPor    string `json:"atendidoPor"`
+	Nivel          string `json:"nivel"`
+	Resumen        string `json:"resumen"`
 }
 
 type SeveroDTO struct {
@@ -82,10 +86,7 @@ type EstadoHospitalDTO struct {
 	TotalEpisodios     int `json:"totalEpisodios"`
 }
 
-// ==============================
 // CREACIÓN DE LA APP
-// ==============================
-
 func NewApp() *App {
 
 	h, err := hospital.NuevoHospital(
@@ -96,10 +97,7 @@ func NewApp() *App {
 		panic(err)
 	}
 
-	// ==============================
 	// PERSONAL
-	// ==============================
-
 	karen, err := hospital.NuevoMedico(
 		"D-001",
 		"Dra. Karen Ospina",
@@ -144,10 +142,7 @@ func NewApp() *App {
 		panic(err)
 	}
 
-	// ==============================
 	// HABITACIONES
-	// ==============================
-
 	for _, numero := range []int{101, 102, 103} {
 
 		hab, err := hospital.NuevaHabitacion(
@@ -164,10 +159,7 @@ func NewApp() *App {
 		}
 	}
 
-	// ==============================
 	// PACIENTES
-	// ==============================
-
 	p1 := crearPaciente(
 		"P-001",
 		"Rafael Escalona",
@@ -252,10 +244,7 @@ func crearPaciente(
 	return p
 }
 
-// ==============================
 // WAILS
-// ==============================
-
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
@@ -264,10 +253,7 @@ func (a *App) NombreHospital() string {
 	return a.hospital.Nombre()
 }
 
-// ==============================
 // BUSCAR PACIENTE
-// ==============================
-
 func (a *App) buscarPaciente(id string) (*hospital.Paciente, error) {
 
 	for _, p := range a.hospital.Pacientes() {
@@ -283,10 +269,7 @@ func (a *App) buscarPaciente(id string) (*hospital.Paciente, error) {
 	)
 }
 
-// ==============================
 // OBTENER PACIENTES
-// ==============================
-
 func (a *App) ObtenerPacientes() []PacienteDTO {
 
 	pacientes := a.hospital.Pacientes()
@@ -331,10 +314,7 @@ func (a *App) ObtenerPacientes() []PacienteDTO {
 	return resultado
 }
 
-// ==============================
 // REGISTRAR ATAQUE
-// ==============================
-
 func (a *App) RegistrarAtaque(
 	pacienteID string,
 	ubicacion string,
@@ -382,10 +362,7 @@ func (a *App) RegistrarAtaque(
 	return registro.Resumen(), nil
 }
 
-// ==============================
 // DESPERTAR PACIENTE
-// ==============================
-
 func (a *App) DespertarPaciente(
 	pacienteID string,
 ) (string, error) {
@@ -408,10 +385,7 @@ func (a *App) DespertarPaciente(
 	), nil
 }
 
-// ==============================
 // ASIGNAR HABITACIÓN
-// ==============================
-
 func (a *App) AsignarHabitacion(
 	pacienteID string,
 ) (string, error) {
@@ -439,10 +413,7 @@ func (a *App) AsignarHabitacion(
 	), nil
 }
 
-// ==============================
 // ESTADO COMPLETO DEL HOSPITAL
-// ==============================
-
 func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 
 	estado := EstadoHospitalDTO{
@@ -450,10 +421,7 @@ func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 		Pacientes: a.ObtenerPacientes(),
 	}
 
-	// ==============================
 	// HABITACIONES
-	// ==============================
-
 	for _, hab := range a.hospital.Habitaciones() {
 
 		ocupante := "-"
@@ -485,10 +453,7 @@ func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 		)
 	}
 
-	// ==============================
 	// PACIENTES DORMIDOS
-	// ==============================
-
 	for _, p := range a.hospital.Pacientes() {
 
 		if p.Estado() != hospital.Despierto {
@@ -499,28 +464,43 @@ func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 	estado.PacientesEnPasillo =
 		len(a.hospital.PacientesEnPasillo())
 
-	// ==============================
-	// EPISODIOS
-	// ==============================
+		// EPISODIOS
 
 	for _, episodio := range a.hospital.Historial() {
+
+		paciente := episodio.Paciente()
+
+		habitacion := "-"
+
+		if episodio.Habitacion() != nil {
+			habitacion = fmt.Sprintf(
+				"%d",
+				episodio.Habitacion().Numero(),
+			)
+		}
 
 		estado.Episodios = append(
 			estado.Episodios,
 			EpisodioDTO{
-				ID:      episodio.ID(),
-				Resumen: episodio.Resumen(),
+				ID:             episodio.ID(),
+				FechaHora:      episodio.FechaHora().Format("02/01/2006 15:04"),
+				PacienteID:     paciente.ID(),
+				PacienteNombre: paciente.Nombre(),
+				Ubicacion:      episodio.Ubicacion(),
+				Habitacion:     habitacion,
+				AtendidoPor:    episodio.AtendidoPor().Nombre(),
+				Nivel:          paciente.Nivel().String(),
+				Resumen:        episodio.Resumen(),
 			},
 		)
 	}
 
+	estado.TotalEpisodios = len(estado.Episodios)
+
 	estado.TotalEpisodios =
 		len(estado.Episodios)
 
-	// ==============================
 	// PERSONAL
-	// ==============================
-
 	estado.Personal = []PersonalDTO{
 		{
 			ID:           a.karen.ID(),
@@ -545,10 +525,7 @@ func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 		},
 	}
 
-	// ==============================
 	// REPORTE SEVEROS
-	// ==============================
-
 	reporte := a.hospital.ReporteSeveros()
 
 	for _, p := range a.hospital.Pacientes() {

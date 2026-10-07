@@ -2,6 +2,13 @@ export namespace main {
 	
 	export class EpisodioDTO {
 	    id: string;
+	    fechaHora: string;
+	    pacienteId: string;
+	    pacienteNombre: string;
+	    ubicacion: string;
+	    habitacion: string;
+	    atendidoPor: string;
+	    nivel: string;
 	    resumen: string;
 	
 	    static createFrom(source: any = {}) {
@@ -11,6 +18,13 @@ export namespace main {
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.id = source["id"];
+	        this.fechaHora = source["fechaHora"];
+	        this.pacienteId = source["pacienteId"];
+	        this.pacienteNombre = source["pacienteNombre"];
+	        this.ubicacion = source["ubicacion"];
+	        this.habitacion = source["habitacion"];
+	        this.atendidoPor = source["atendidoPor"];
+	        this.nivel = source["nivel"];
 	        this.resumen = source["resumen"];
 	    }
 	}

@@ -1729,3 +1729,2755 @@ button {
     border-left:
         4px solid #c96c70;
 }
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-page {
+    padding: 20px 28px 35px;
+}
+
+
+/* Banner principal */
+
+.dashboard-hero {
+    min-height: 140px;
+    padding: 24px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fdecef 0%,
+            #f9e8ee 52%,
+            #f1e7f5 100%
+        );
+}
+
+.dashboard-hero h1 {
+    margin-top: 8px;
+
+    font-size: 34px;
+    color: #332c31;
+}
+
+.dashboard-hero .sun {
+    color: #f3a43b;
+    font-size: 30px;
+}
+
+.dashboard-hero .hero-description {
+    margin-top: 8px;
+}
+
+.dashboard-hero .hero-actions {
+    margin-top: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.dashboard-main-button,
+.dashboard-room-button {
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border-radius: 13px;
+}
+
+.dashboard-main-button {
+    box-shadow:
+        0 8px 18px
+        rgba(189, 109, 136, 0.20);
+}
+
+
+/* Tarjetas superiores */
+
+.dashboard-stats {
+    margin-top: 16px;
+}
+
+.dashboard-stats .stat-card {
+    min-height: 115px;
+
+    padding: 17px 18px;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 14px;
+
+    border-radius: 19px;
+}
+
+.dashboard-stats .stat-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    align-self: flex-start;
+
+    font-size: 20px;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.dashboard-stats .stat-content p {
+    color: #554a4f;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: none;
+}
+
+.dashboard-stats .stat-content strong {
+    margin-top: 4px;
+
+    color: #332d31;
+
+    font-size: 26px;
+    line-height: 1;
+}
+
+.dashboard-stats .stat-content span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #94878c;
+
+    font-size: 9px;
+}
+
+
+/* Paneles del centro */
+
+.dashboard-main-grid {
+    margin-top: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr 1fr;
+
+    gap: 14px;
+}
+
+.dashboard-box {
+    padding: 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 5px 18px
+        rgba(74, 52, 60, 0.035);
+}
+
+.dashboard-box-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.dashboard-title-icon {
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+}
+
+.pink-icon {
+    background: var(--pink-soft);
+    color: var(--pink-dark);
+}
+
+.dashboard-box-title h2 {
+    color: #332d31;
+
+    font-size: 15px;
+}
+
+.dashboard-box-title p {
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* Habitaciones del dashboard */
+
+.dashboard-rooms {
+    margin-top: 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.dashboard-room {
+    min-height: 145px;
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #e5efe8;
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5fbf7,
+            #f8fbf7
+        );
+}
+
+.dashboard-room > strong {
+    color: #332d31;
+
+    font-size: 15px;
+}
+
+.dashboard-room-state {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #4d916d;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.dashboard-room-state i {
+    width: 8px;
+    height: 8px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #4dc184;
+}
+
+.dashboard-room-icon {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--pink);
+
+    font-size: 30px;
+}
+
+.dashboard-room p {
+    color: #93868b;
+
+    font-size: 9px;
+    text-align: center;
+}
+
+.dashboard-room.ocupada {
+    border-color: #f0dfe4;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f7,
+            #fdf8f9
+        );
+}
+
+.dashboard-room.ocupada .dashboard-room-state {
+    color: var(--pink-dark);
+}
+
+.dashboard-room.ocupada .dashboard-room-state i {
+    background: var(--pink);
+}
+
+
+/* Acciones rápidas */
+
+.dashboard-quick-grid {
+    margin-top: 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+.quick-card {
+    min-height: 74px;
+
+    padding: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        34px 1fr 20px;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: 0;
+    border-radius: 13px;
+
+    color: #40373b;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(70, 50, 60, 0.08);
+}
+
+.quick-pink {
+    background: #fbe8ed;
+}
+
+.quick-purple {
+    background: #f0eafb;
+}
+
+.quick-green {
+    background: #e9f5ee;
+}
+
+.quick-yellow {
+    background: #fff2e2;
+}
+
+.quick-card-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    color: var(--pink-dark);
+
+    font-size: 17px;
+}
+
+.quick-card > span:nth-child(2) {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-card strong {
+    font-size: 10px;
+}
+
+.quick-card small {
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: #897c81;
+
+    font-size: 8px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.quick-card b {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    color: var(--pink);
+
+    font-size: 12px;
+}
+
+
+/* Actividad reciente */
+
+.recent-activity {
+    margin-top: 14px;
+}
+
+.recent-activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.activity-link {
+    padding: 8px 13px;
+
+    border: 0;
+    border-radius: 20px;
+
+    background: var(--pink-soft);
+
+    color: var(--pink-dark);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.activity-link:hover {
+    background: #f4dbe3;
+}
+
+.dashboard-activity {
+    margin-top: 12px;
+}
+
+.dashboard-empty-activity {
+    min-height: 64px;
+
+    padding: 12px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fdf0f3,
+            #faedf4
+        );
+}
+
+.activity-empty-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    color: var(--pink);
+
+    font-size: 21px;
+}
+
+.dashboard-empty-activity strong {
+    color: #453b40;
+
+    font-size: 10px;
+}
+
+.dashboard-empty-activity p {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+
+/* Episodios que aparecen en actividad reciente */
+
+.dashboard-activity-item {
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    border-bottom:
+        1px solid #f1e7e5;
+}
+
+.dashboard-activity-item:last-child {
+    border-bottom: 0;
+}
+
+.activity-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--purple-soft);
+
+    color: var(--pink);
+
+    font-size: 17px;
+}
+
+.dashboard-activity-item strong {
+    color: var(--pink-dark);
+
+    font-size: 9px;
+}
+
+.dashboard-activity-item p {
+    margin-top: 3px;
+
+    color: #75696d;
+
+    font-size: 8px;
+}
+
+
+/* Ajuste para pantallas más pequeñas */
+
+@media (max-width: 1150px) {
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-hero {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .dashboard-rooms {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Iconos SVG */
+
+.nav-icon svg,
+.stat-icon svg,
+.dashboard-title-icon svg,
+.dashboard-room-icon svg,
+.quick-card-icon svg,
+.activity-empty-icon svg,
+.activity-icon svg,
+.button-icon svg,
+.activity-arrow svg,
+.brand-icon svg {
+    width: 1em;
+    height: 1em;
+
+    display: block;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.brand-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.stat-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.dashboard-room-icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+.dashboard-title-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.quick-card-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.quick-card b svg {
+    width: 13px;
+    height: 13px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.activity-empty-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.activity-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.activity-link {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.activity-arrow {
+    display: inline-flex;
+}
+
+.activity-arrow svg {
+    width: 12px;
+    height: 12px;
+}
+
+.dashboard-greeting {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.dashboard-greeting .sun {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-greeting .sun svg {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Botones del banner */
+
+.dashboard-hero {
+    position: relative;
+}
+
+.dashboard-hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-hero .hero-actions {
+    position: relative;
+    z-index: 10;
+}
+
+.dashboard-main-button,
+.dashboard-room-button {
+    position: relative;
+    z-index: 11;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+}
+
+.dashboard-room-button {
+    border: 1px solid #f0e4e7;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #65595e;
+}
+
+.dashboard-room-button:hover {
+    border-color: #e5cbd3;
+
+    background: #ffffff;
+
+    color: var(--pink-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px
+        rgba(92, 66, 75, 0.08);
+}
+
+.dashboard-main-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(189, 109, 136, 0.25);
+}
+
+/* =========================================
+   PACIENTES
+========================================= */
+
+.patients-page {
+    padding: 28px 30px 40px;
+}
+
+
+/* Encabezado */
+
+.patients-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.patients-header h1 {
+    margin-top: 7px;
+
+    color: #332d31;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+.page-description {
+    margin-top: 10px;
+
+    color: #8d8085;
+
+    font-size: 12px;
+}
+
+
+/* Buscador y filtro */
+
+.patients-tools {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+.patient-search {
+    width: 245px;
+    height: 43px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border: 1px solid #eadfe1;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.search-icon {
+    display: flex;
+
+    color: #b4a7ac;
+}
+
+.search-icon svg {
+    width: 16px;
+    height: 16px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.patient-search input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #4b4145;
+
+    font: inherit;
+    font-size: 10px;
+}
+
+.patient-search input::placeholder {
+    color: #b3a6aa;
+}
+
+.patient-filter {
+    width: 185px;
+    height: 43px;
+
+    padding: 0 13px;
+
+    border: 1px solid #eadfe1;
+    border-radius: 12px;
+    outline: 0;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #65595e;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Cantidad de pacientes */
+
+.patients-count {
+    margin-top: 12px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    color: #998d91;
+
+    font-size: 10px;
+}
+
+
+/* Tarjetas */
+
+.patients-reference-grid {
+    margin-top: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.patient-reference-card {
+    min-height: 260px;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #eadfe1;
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.84);
+
+    box-shadow:
+        0 5px 18px
+        rgba(80, 56, 64, 0.035);
+}
+
+
+/* Nombre del paciente */
+
+.patient-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.patient-avatar {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #fae5eb;
+
+    color: #c85f82;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.patient-identity {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-identity strong {
+    overflow: hidden;
+
+    color: #332d31;
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.patient-identity span {
+    margin-top: 3px;
+
+    color: #998d91;
+
+    font-size: 9px;
+}
+
+
+/* Nivel de narcolepsia */
+
+.patient-level {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.level-light {
+    background: #e3f3e9;
+    color: #55926c;
+}
+
+.level-moderate {
+    background: #fff0ce;
+    color: #bd8b32;
+}
+
+.level-severe {
+    background: #fde2e4;
+    color: #d7616c;
+}
+
+
+/* Información */
+
+.patient-divider {
+    height: 1px;
+
+    margin: 14px 0;
+
+    background: #f0e6e7;
+}
+
+.patient-information {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.patient-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.patient-info-row > span {
+    color: #93868b;
+
+    font-size: 10px;
+}
+
+.patient-info-row > strong {
+    max-width: 65%;
+
+    overflow: hidden;
+
+    color: #51474b;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Estado */
+
+.patient-state {
+    padding: 4px 8px;
+
+    border-radius: 20px;
+}
+
+.patient-awake {
+    background: #dff5e7;
+
+    color: #299c61 !important;
+}
+
+.patient-sleeping {
+    background: #eee6fb;
+
+    color: #8762c4 !important;
+}
+
+.patient-hallway {
+    background: #fff0d9;
+
+    color: #c18231 !important;
+}
+
+
+/* Botones */
+
+.patient-card-actions {
+    margin-top: auto;
+    padding-top: 15px;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.patient-main-action,
+.patient-secondary-action {
+    min-height: 38px;
+
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.patient-main-action {
+    flex: 1;
+
+    background: #fae4ea;
+
+    color: #c6587b;
+}
+
+.patient-main-action:hover {
+    transform: translateY(-1px);
+
+    background: #f7dbe3;
+
+    box-shadow:
+        0 5px 13px
+        rgba(185, 93, 124, 0.10);
+}
+
+.patient-secondary-action {
+    flex: 1;
+
+    background: #e8f4ec;
+
+    color: #4c9168;
+}
+
+.patient-secondary-action:hover {
+    transform: translateY(-1px);
+
+    background: #dff0e5;
+}
+
+.patient-action-icon {
+    display: inline-flex;
+}
+
+.patient-action-icon svg {
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* Sin resultados */
+
+.patients-empty {
+    grid-column: 1 / -1;
+
+    padding: 45px;
+
+    border: 1px dashed #e7dadd;
+    border-radius: 17px;
+
+    color: #998d91;
+
+    text-align: center;
+}
+
+
+/* Pantallas más pequeñas */
+
+@media (max-width: 1150px) {
+
+    .patients-reference-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .patients-tools {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .patient-search,
+    .patient-filter {
+        width: 100%;
+    }
+
+    .patients-reference-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   PERSONAL MEDICO
+========================================= */
+
+.staff-page {
+    padding: 28px 30px 40px;
+}
+
+
+/* Encabezado */
+
+.staff-header h1 {
+    margin-top: 7px;
+
+    color: #332d31;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+
+/* Tarjetas */
+
+.staff-grid {
+    margin-top: 32px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.staff-card {
+    min-height: 390px;
+
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #eadfe1;
+    border-radius: 19px;
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    box-shadow:
+        0 6px 20px
+        rgba(78, 56, 64, 0.04);
+}
+
+
+/* Parte superior */
+
+.staff-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.staff-avatar {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.staff-avatar-doctor {
+    background:
+        linear-gradient(
+            145deg,
+            #fbe1e9,
+            #f7e8f2
+        );
+
+    color: #bd5276;
+}
+
+.staff-avatar-orderly {
+    background:
+        linear-gradient(
+            145deg,
+            #fde7dd,
+            #fff0e8
+        );
+
+    color: #b66042;
+}
+
+
+/* Cargo */
+
+.staff-role {
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.staff-doctor {
+    background: #e4f4eb;
+    color: #4b936b;
+}
+
+.staff-orderly {
+    background: #e5f1f8;
+    color: #5285a2;
+}
+
+
+/* Nombre */
+
+.staff-identity {
+    margin-top: 20px;
+}
+
+.staff-identity h2 {
+    color: #302a2e;
+
+    font-size: 17px;
+}
+
+.staff-identity span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #998d91;
+
+    font-size: 11px;
+}
+
+.staff-divider {
+    height: 1px;
+
+    margin: 16px 0 20px;
+
+    background: #f0e5e6;
+}
+
+
+/* Información */
+
+.staff-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.staff-detail-row {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.staff-detail-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #cb7b8d;
+}
+
+.staff-detail-icon svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.staff-detail-row > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.staff-detail-row span {
+    color: #93868b;
+
+    font-size: 10px;
+}
+
+.staff-detail-row strong {
+    color: #443b3f;
+
+    font-size: 11px;
+}
+
+
+/* Botón inferior */
+
+.staff-episodes-button {
+    width: 100%;
+    min-height: 44px;
+
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 0;
+    border-radius: 11px;
+
+    background: #fae5eb;
+
+    color: #c6577b;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.staff-episodes-button:hover {
+    transform: translateY(-1px);
+
+    background: #f7dce4;
+
+    box-shadow:
+        0 6px 15px
+        rgba(183, 91, 122, 0.10);
+}
+
+.staff-episodes-button span {
+    display: inline-flex;
+}
+
+.staff-episodes-button svg {
+    width: 16px;
+    height: 16px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* Pantallas pequeñas */
+
+@media (max-width: 1100px) {
+
+    .staff-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   HABITACIONES
+========================================= */
+
+.rooms-page {
+    padding: 28px 30px 40px;
+}
+
+
+/* Encabezado */
+
+.rooms-header h1 {
+    margin-top: 7px;
+
+    color: #332d31;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+
+/* Contenedor de habitaciones */
+
+.rooms-grid {
+    margin-top: 32px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* Tarjeta */
+
+.room-card {
+    min-height: 350px;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #eadfe1;
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    box-shadow:
+        0 6px 20px
+        rgba(78, 56, 64, 0.04);
+}
+
+
+/* Parte superior de la habitación */
+
+.room-visual {
+    min-height: 92px;
+
+    padding: 17px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-radius: 15px;
+}
+
+.room-available {
+    background:
+        linear-gradient(
+            135deg,
+            #eef9f3,
+            #f5fbf8
+        );
+
+    color: #279264;
+}
+
+.room-occupied {
+    background:
+        linear-gradient(
+            135deg,
+            #fce9ee,
+            #fff3f5
+        );
+
+    color: #c75a7e;
+}
+
+
+/* Icono */
+
+.room-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.room-icon svg {
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* Estado */
+
+.room-status {
+    padding: 7px 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.room-status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+/* Número */
+
+.room-number {
+    padding: 14px 9px 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.room-number span {
+    color: #998d91;
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.room-number strong {
+    margin-top: 5px;
+
+    color: #302a2e;
+
+    font-size: 31px;
+    line-height: 1;
+}
+
+
+/* Separador */
+
+.room-divider {
+    height: 1px;
+
+    margin: 18px 9px;
+
+    background: #f0e5e6;
+}
+
+
+/* Información */
+
+.room-information {
+    padding: 0 9px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+.room-info-row {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.room-info-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #a67682;
+}
+
+.room-info-icon svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.room-info-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.room-info-text span {
+    color: #93868b;
+
+    font-size: 10px;
+}
+
+.room-info-text strong {
+    overflow: hidden;
+
+    color: #443b3f;
+
+    font-size: 11px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Pantallas pequeñas */
+
+@media (max-width: 1050px) {
+
+    .rooms-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   EPISODIOS
+========================================= */
+
+.episodes-page {
+    padding: 28px 30px 40px;
+}
+
+
+/* Encabezado */
+
+.episodes-header h1 {
+    margin-top: 7px;
+
+    color: #332d31;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+
+/* Lista */
+
+.episodes-list {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* Episodio */
+
+.episode-row {
+    min-height: 90px;
+
+    padding: 14px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    border: 1px solid #eadfe1;
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    box-shadow:
+        0 5px 18px
+        rgba(78, 56, 64, 0.035);
+}
+
+
+/* Número e icono */
+
+.episode-main {
+    min-width: 185px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.episode-moon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee4fb,
+            #f7effd
+        );
+
+    color: #8060c4;
+}
+
+.episode-moon svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.episode-identity {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.episode-identity strong {
+    color: #d05b80;
+
+    font-size: 13px;
+}
+
+.episode-identity span {
+    color: #9b8e93;
+
+    font-size: 9px;
+}
+
+
+/* Separador */
+
+.episode-separator {
+    width: 1px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    background: #eee3e5;
+}
+
+
+/* Información real del episodio */
+
+.episode-summary {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.episode-summary span {
+    color: #998d91;
+
+    font-size: 9px;
+}
+
+.episode-summary strong {
+    color: #453c40;
+
+    font-size: 10px;
+    font-weight: 650;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* Cuando todavía no existen episodios */
+
+.episodes-empty {
+    min-height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 9px;
+
+    border: 1px dashed #e8dadd;
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    text-align: center;
+}
+
+.episodes-empty-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f4eafa;
+
+    color: #8b68c8;
+}
+
+.episodes-empty-icon svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.episodes-empty strong {
+    color: #443b3f;
+
+    font-size: 12px;
+}
+
+.episodes-empty span {
+    color: #998d91;
+
+    font-size: 10px;
+}
+
+
+/* Pantallas pequeñas */
+
+@media (max-width: 750px) {
+
+    .episode-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .episode-separator {
+        width: 100%;
+        height: 1px;
+    }
+
+}
+
+
+/* =========================================
+   HISTORIAL DE EPISODIOS
+========================================= */
+
+.episodes-detail-list {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.episode-detail-row {
+    min-height: 92px;
+
+    padding: 14px 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        1.35fr
+        1.35fr
+        1.2fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid #eadfe1;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 5px 18px
+        rgba(78, 56, 64, 0.035);
+}
+
+
+/* ID y fecha */
+
+.episode-id-section {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.episode-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee4fb,
+            #f8f1fd
+        );
+
+    color: #8060c4;
+}
+
+.episode-icon svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.episode-id-section > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.episode-code {
+    color: #d15c81;
+
+    font-size: 13px;
+}
+
+.episode-date {
+    color: #94888c;
+
+    font-size: 9px;
+}
+
+
+/* Columnas */
+
+.episode-column {
+    min-width: 0;
+
+    padding-left: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border-left: 1px solid #eee3e5;
+}
+
+.episode-column-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c36d87;
+}
+
+.episode-column-icon svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.episode-column > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.episode-column span {
+    color: #9a8d91;
+
+    font-size: 9px;
+}
+
+.episode-column strong {
+    overflow: hidden;
+
+    color: #443b3f;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Nivel del paciente */
+
+.episode-level {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.episode-level-severe {
+    color: #d95c6f;
+    background: #fde4e7;
+}
+
+.episode-level-moderate {
+    color: #bd852d;
+    background: #fff0cd;
+}
+
+.episode-level-mild {
+    color: #40966c;
+    background: #e3f5eb;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+
+    .episode-detail-row {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .episode-level {
+        width: fit-content;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .episode-detail-row {
+        grid-template-columns: 1fr;
+    }
+
+    .episode-column {
+        padding-top: 10px;
+        padding-left: 0;
+
+        border-top: 1px solid #eee3e5;
+        border-left: 0;
+    }
+
+}
+
+/* =========================================
+   REPORTES
+========================================= */
+
+.reports-page {
+    padding: 28px 30px 40px;
+}
+
+
+/* Encabezado */
+
+.reports-header h1 {
+    margin-top: 7px;
+
+    color: #332d31;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+
+/* Tarjetas superiores */
+
+.reports-summary-grid {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.report-summary-card {
+    min-height: 130px;
+
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    border-radius: 20px;
+}
+
+.report-summary-hallway {
+    background:
+        linear-gradient(
+            135deg,
+            #fbe6ed,
+            #f9e9f1
+        );
+}
+
+.report-summary-beds {
+    background:
+        linear-gradient(
+            135deg,
+            #e4f5ed,
+            #e9f7f1
+        );
+}
+
+.report-summary-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+}
+
+.report-summary-hallway
+.report-summary-icon {
+    color: #d3537c;
+}
+
+.report-summary-beds
+.report-summary-icon {
+    color: #269368;
+}
+
+.report-summary-icon svg {
+    width: 29px;
+    height: 29px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.report-summary-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-summary-card span {
+    color: #4a4145;
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.report-summary-card strong {
+    margin-top: 4px;
+
+    color: #342e31;
+
+    font-size: 30px;
+    line-height: 1;
+}
+
+.report-summary-card p {
+    margin-top: 8px;
+
+    color: #918589;
+
+    font-size: 10px;
+}
+
+
+/* Parte inferior */
+
+.reports-detail-grid {
+    margin-top: 16px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.report-detail-card {
+    min-height: 310px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+}
+
+.report-history-card {
+    background:
+        linear-gradient(
+            135deg,
+            #f0e9fb,
+            #eee7f8
+        );
+}
+
+.report-severe-card {
+    background:
+        linear-gradient(
+            135deg,
+            #fff3d8,
+            #fff0cf
+        );
+}
+
+
+/* Título de cada reporte */
+
+.report-card-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.report-heading-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    color: #c45e82;
+}
+
+.report-heading-icon svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.report-card-heading > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.report-label {
+    color: #d05d80;
+
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 1.2px;
+}
+
+.report-card-heading h2 {
+    margin: 0;
+
+    color: #383135;
+
+    font-size: 18px;
+}
+
+.report-description {
+    margin: 13px 0 16px;
+
+    color: #81767a;
+
+    font-size: 10px;
+}
+
+
+/* Filas */
+
+.report-rows {
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+}
+
+.report-person-row,
+.report-severe-row {
+    min-height: 62px;
+
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom:
+        1px solid rgba(222, 208, 212, 0.7);
+}
+
+.report-person-row:last-child,
+.report-severe-row:last-child {
+    border-bottom: 0;
+}
+
+
+/* Avatares */
+
+.report-person-avatar,
+.report-severe-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.report-avatar-doctor {
+    color: #bc4e72;
+    background: #fbe5ed;
+}
+
+.report-avatar-orderly {
+    color: #b46a29;
+    background: #fff0df;
+}
+
+.report-severe-avatar {
+    color: #c15c7d;
+    background: #fbe6ee;
+}
+
+
+/* Texto de filas */
+
+.report-person-info,
+.report-severe-info {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.report-person-info strong,
+.report-severe-info strong {
+    overflow: hidden;
+
+    color: #423a3e;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.report-person-info span,
+.report-severe-info span {
+    color: #978b8f;
+
+    font-size: 9px;
+}
+
+.report-count {
+    color: #423a3e;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* Reporte vacío */
+
+.report-empty {
+    padding: 24px;
+
+    color: #94878b;
+
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .reports-summary-grid,
+    .reports-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .report-summary-card {
+        padding: 18px;
+    }
+
+    .report-person-row,
+    .report-severe-row {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* Tarjetas superiores de reportes */
+
+.report-summary-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.report-summary-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.report-summary-icon {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Icono grande que aparece al fondo */
+
+.report-background-icon {
+    position: absolute;
+
+    right: 36px;
+    top: 50%;
+
+    width: 120px;
+    height: 120px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.report-background-icon svg {
+    width: 100px;
+    height: 100px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+}
+
+
+/* Pacientes en pasillo */
+
+.report-summary-hallway
+.report-background-icon {
+    color: rgba(205, 92, 130, 0.10);
+}
+
+.report-summary-hallway
+.report-summary-icon {
+    color: #d15d83;
+}
+
+
+/* Camas disponibles */
+
+.report-summary-beds
+.report-background-icon {
+    color: rgba(45, 157, 112, 0.10);
+}
+
+.report-summary-beds
+.report-summary-icon {
+    color: #27996c;
+}
+
+
+/* Tamaño de los iconos pequeños */
+
+.report-summary-icon svg {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
