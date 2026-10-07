@@ -108,7 +108,11 @@ func (p *Paciente) Despertar() error {
 		p.habitacion = nil
 	}
 
+	// El paciente vuelve al estado despierto.
 	p.estado = Despierto
+
+	// Al despertar, ya no permanece en la ubicación donde estaba dormido.
+	p.ubicacionActual = ""
 
 	return nil
 }
