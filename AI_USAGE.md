@@ -1,22 +1,35 @@
 # Uso de Inteligencia Artificial
 
-## Herramienta utilizada
+## Herramientas utilizadas
 
-Durante el desarrollo del proyecto se utilizó ChatGPT como herramienta de apoyo.
+Durante el desarrollo del proyecto se utilizaron ChatGPT y Claude como herramientas de apoyo.
 
-La inteligencia artificial se utilizó principalmente para:
+### Claude
 
-- Analizar y comprender algunos requisitos del ejercicio.
-- Resolver dudas sobre conceptos de Go.
-- Comprender el uso de composición, interfaces y polimorfismo.
-- Revisar partes del código durante el desarrollo.
-- Identificar posibles errores.
-- Apoyar la revisión de las pruebas.
-- Mejorar la organización y legibilidad de algunas partes del código.
-- Comprender errores encontrados durante la integración de la interfaz gráfica.
-- Revisar la comunicación entre la interfaz y la lógica implementada en Go.
+Claude se utilizó principalmente durante el desarrollo inicial del proyecto para:
 
-Las sugerencias realizadas por la inteligencia artificial fueron revisadas, ejecutadas y probadas antes de incorporarlas al proyecto.
+- Apoyar el diseño de la estructura del paquete `hospital`.
+- Revisar la organización de las entidades principales.
+- Apoyar la implementación inicial de partes del modelo en Go.
+- Apoyar la construcción del escenario ejecutado desde `main.go`.
+- Revisar y apoyar la creación de pruebas automáticas.
+- Analizar algunos requisitos del enunciado y compararlos con la implementación.
+
+### ChatGPT
+
+ChatGPT se utilizó principalmente para:
+
+- Comprender conceptos de Go utilizados en el proyecto.
+- Revisar la implementación y explicar estructuras y métodos.
+- Comprender composición, interfaces y polimorfismo.
+- Identificar y solucionar errores encontrados durante el desarrollo.
+- Revisar el funcionamiento de las pruebas.
+- Apoyar la creación e integración de la interfaz gráfica con Wails.
+- Depurar la comunicación entre JavaScript y Go.
+- Realizar pruebas del flujo completo de la interfaz.
+- Revisar la documentación y los requisitos finales de entrega.
+
+Las sugerencias realizadas por ambas herramientas fueron revisadas, ejecutadas y probadas durante el desarrollo.
 
 ## Prompts importantes
 
@@ -24,15 +37,15 @@ Algunas de las solicitudes que tuvieron mayor importancia durante el desarrollo 
 
 ### Prompt 1
 
-> Explícame cómo puedo aplicar composición, interfaces y polimorfismo en Go para este proyecto del hospital.
+> Ayúdame a organizar las estructuras necesarias para representar el hospital, los pacientes, los médicos, las habitaciones y los episodios en Go.
 
-Esta solicitud se utilizó como apoyo para comprender cómo representar los conceptos de programación orientada a objetos solicitados en el ejercicio utilizando las características propias de Go.
+Este tipo de solicitud se utilizó durante el desarrollo inicial para analizar cómo dividir las responsabilidades entre las diferentes entidades del sistema.
 
 ### Prompt 2
 
 > Revisa esta parte del código y explícame qué hace cada estructura y método de una manera sencilla para poder entenderlo y sustentarlo.
 
-Esta solicitud se utilizó durante la revisión del proyecto para comprender mejor la responsabilidad de las diferentes estructuras y métodos y poder explicar las decisiones tomadas durante el desarrollo.
+Esta solicitud se utilizó durante la revisión del proyecto para comprender la responsabilidad de las estructuras y métodos y poder explicar las decisiones tomadas durante el desarrollo.
 
 ### Prompt 3
 
@@ -40,7 +53,7 @@ Esta solicitud se utilizó durante la revisión del proyecto para comprender mej
 
 Esta solicitud se utilizó durante las pruebas de la interfaz para identificar problemas de integración entre JavaScript, Wails y la lógica desarrollada en Go.
 
-Las respuestas obtenidas se utilizaron como orientación y apoyo durante el desarrollo. Las soluciones fueron revisadas y probadas antes de incorporarlas al proyecto.
+Las respuestas obtenidas se utilizaron como orientación y apoyo. Las soluciones fueron revisadas y probadas antes de incorporarlas definitivamente al proyecto.
 
 ## Casos en los que fue necesario corregir sugerencias de IA
 

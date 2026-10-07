@@ -6,6 +6,10 @@ El sistema representa un hospital encargado de atender pacientes con narcolepsia
 
 También se desarrolló una interfaz gráfica utilizando Wails para visualizar y administrar la información del hospital.
 
+## Integrante
+
+- Ana Sofía Henao Tabares
+
 ## Funcionalidades principales
 
 El sistema permite:

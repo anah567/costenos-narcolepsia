@@ -16,12 +16,6 @@ type App struct {
 
 	hospital *hospital.Hospital
 
-	p1 *hospital.Paciente
-	p2 *hospital.Paciente
-	p3 *hospital.Paciente
-	p4 *hospital.Paciente
-	p5 *hospital.Paciente
-
 	karen  *hospital.Medico
 	julio  *hospital.Medico
 	camilo *hospital.Camillero
@@ -210,12 +204,6 @@ func NewApp() *App {
 
 	return &App{
 		hospital: h,
-
-		p1: p1,
-		p2: p2,
-		p3: p3,
-		p4: p4,
-		p5: p5,
 
 		karen:  karen,
 		julio:  julio,
@@ -497,23 +485,20 @@ func (a *App) ObtenerEstadoHospital() EstadoHospitalDTO {
 
 	estado.TotalEpisodios = len(estado.Episodios)
 
-	estado.TotalEpisodios =
-		len(estado.Episodios)
-
 	// PERSONAL
 	estado.Personal = []PersonalDTO{
 		{
 			ID:           a.karen.ID(),
 			Nombre:       a.karen.Nombre(),
 			Cargo:        "Médico",
-			Especialidad: "Medicina del sueño",
+			Especialidad: a.karen.Especialidad(),
 			Episodios:    len(a.karen.MisEpisodios()),
 		},
 		{
 			ID:           a.julio.ID(),
 			Nombre:       a.julio.Nombre(),
 			Cargo:        "Médico",
-			Especialidad: "Neurología",
+			Especialidad: a.julio.Especialidad(),
 			Episodios:    len(a.julio.MisEpisodios()),
 		},
 		{
